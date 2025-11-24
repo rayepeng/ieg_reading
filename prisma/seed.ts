@@ -9,40 +9,40 @@ async function main() {
 
     const sessions = [
         {
-            title: '第1期：如何阅读一本书',
-            date: new Date('2018-01-01'),
-            speaker: '张三',
-            description: '分享关于阅读的方法论，如何快速掌握一本书的核心内容。',
-            imageUrl: 'https://picsum.photos/seed/1/800/600',
+            title: "第1期：霍乱时期的爱情",
+            date: new Date("2022-02-20"),
+            speaker: "小江村儿的文杰",
+            description: "探讨加西亚·马尔克斯的经典作品《霍乱时期的爱情》，一段跨越半个世纪的爱情故事。",
+            imageUrl: "https://picsum.photos/seed/1/800/600"
         },
         {
-            title: '第2期：人类简史',
-            date: new Date('2018-02-01'),
-            speaker: '李四',
-            description: '回顾人类发展的历史，探讨未来的可能性。',
-            imageUrl: 'https://picsum.photos/seed/2/800/600',
+            title: "第2期：呼啸山庄",
+            date: new Date("2022-05-21"),
+            speaker: "小江村儿的文杰",
+            description: "分享艾米莉·勃朗特的《呼啸山庄》，揭示其深刻的爱与复仇主题。",
+            imageUrl: "https://picsum.photos/seed/2/800/600"
         },
         {
-            title: '第3期：三体',
-            date: new Date('2018-03-01'),
-            speaker: '王五',
-            description: '中国科幻的巅峰之作，探讨宇宙社会学。',
-            imageUrl: 'https://picsum.photos/seed/3/800/600',
+            title: "第3期：三体/黑暗森林",
+            date: new Date("2022-07-24"),
+            speaker: "小江村儿的文杰",
+            description: "讨论刘慈欣的科幻巨作《三体》和《黑暗森林》，探索人类文明与外星文明的碰撞。",
+            imageUrl: "https://picsum.photos/seed/3/800/600"
         },
         {
-            title: '第4期：百年孤独',
-            date: new Date('2018-04-01'),
-            speaker: '赵六',
-            description: '魔幻现实主义的代表作，讲述布恩迪亚家族七代人的传奇故事。',
-            imageUrl: 'https://picsum.photos/seed/4/800/600',
+            title: "第4期：置身事内",
+            date: new Date("2022-09-18"),
+            speaker: "Bob",
+            description: "分享《置身事内》这本书，探讨自我提升与内心觉察的过程。",
+            imageUrl: "https://picsum.photos/seed/4/800/600"
         },
         {
-            title: '第5期：穷查理宝典',
-            date: new Date('2018-05-01'),
-            speaker: '钱七',
-            description: '查理·芒格的智慧箴言，关于投资与人生的思考。',
-            imageUrl: 'https://picsum.photos/seed/5/800/600',
-        },
+            title: "第5期：人性的枷锁",
+            date: new Date("2022-09-25"),
+            speaker: "大鲸鱼",
+            description: "讲述威廉·萨默塞特·毛姆的经典小说《人性的枷锁》，分析人物的心理成长与困境。",
+            imageUrl: "https://picsum.photos/seed/5/800/600"
+        }
     ];
 
     for (const session of sessions) {
@@ -90,7 +90,7 @@ async function main() {
     // Let's use the tool to generate the hash first? No, I can't.
     // I will use a simple one-liner in the seed file to hash it using the installed bcryptjs.
 
-    const bcrypt = require('bcryptjs');
+    const bcrypt = await import('bcryptjs');
     const hashedPassword = await bcrypt.hash('admin', 10);
 
     await prisma.admin.create({
