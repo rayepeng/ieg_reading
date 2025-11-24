@@ -1,0 +1,32 @@
+{
+    "sessions": [
+        {
+            "title": "Sample Session 1",
+            "date": "2024-01-01",
+            "speaker": "John Doe",
+            "description": "A sample reading session.",
+            "imageUrl": "https://example.com/image1.jpg"
+        },
+        {
+            "title": "Sample Session 2",
+            "date": "2024-02-01",
+            "speaker": "Jane Smith",
+            "description": "Another sample session.",
+            "imageUrl": "https://example.com/image2.jpg"
+        }
+    ],
+    "councilMembers": [
+        {
+            "name": "Member 1",
+            "bio": "Bio for member 1.",
+            "imageUrl": "https://example.com/member1.jpg",
+            "order": "1"
+        },
+        {
+            "name": "Member 2",
+            "bio": "Bio for member 2.",
+            "imageUrl": "https://example.com/member2.jpg",
+            "order": "2"
+        }
+    ]
+}
