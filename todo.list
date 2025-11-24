@@ -1,0 +1,96 @@
+1. admin登录报错
+
+```bash
+ [next-auth][error][JWT_SESSION_ERROR] 
+https://next-auth.js.org/errors#jwt_session_error decryption operation failed {
+  message: 'decryption operation failed',
+  stack: 'JWEDecryptionFailed: decryption operation failed\n' +
+    '    at gcmDecrypt (/Users/rayepeng/Documents/code/ieg_reading/web/.next/dev/server/chunks/31f74_jose_dist_node_cjs_ce291f14._.js:734:15)\n' +
+    '    at decrypt (/Users/rayepeng/Documents/code/ieg_reading/web/.next/dev/server/chunks/31f74_jose_dist_node_cjs_ce291f14._.js:757:20)\n' +
+    '    at flattenedDecrypt (/Users/rayepeng/Documents/code/ieg_reading/web/.next/dev/server/chunks/31f74_jose_dist_node_cjs_ce291f14._.js:2254:52)\n' +
+    '    at async compactDecrypt (/Users/rayepeng/Documents/code/ieg_reading/web/.next/dev/server/chunks/31f74_jose_dist_node_cjs_ce291f14._.js:2308:23)\n' +
+    '    at async jwtDecrypt (/Users/rayepeng/Documents/code/ieg_reading/web/.next/dev/server/chunks/31f74_jose_dist_node_cjs_ce291f14._.js:3770:23)\n' +
+    '    at async Object.decode (/Users/rayepeng/Documents/code/ieg_reading/web/.next/dev/server/chunks/31f74_next-auth_8b38fe1b._.js:725:25)\n' +
+    '    at async Object.session (/Users/rayepeng/Documents/code/ieg_reading/web/.next/dev/server/chunks/31f74_next-auth_8b38fe1b._.js:2038:34)\n' +
+    '    at async AuthHandler (/Users/rayepeng/Documents/code/ieg_reading/web/.next/dev/server/chunks/31f74_next-auth_8b38fe1b._.js:3184:37)\n' +
+    '    at async getServerSession (/Users/rayepeng/Documents/code/ieg_reading/web/.next/dev/server/chunks/31f74_next-auth_8b38fe1b._.js:3576:21)\n' +
+    '    at async GET (/Users/rayepeng/Documents/code/ieg_reading/web/.next/dev/server/chunks/[root-of-the-server]__e899d1a8._.js:215:21)\n' +
+    '    at async AppRouteRouteModule.do (/Users/rayepeng/Documents/code/ieg_reading/web/node_modules/next/dist/compiled/next-server/app-route-turbo.runtime.dev.js:5:37789)\n' +
+    '    at async AppRouteRouteModule.handle (/Users/rayepeng/Documents/code/ieg_reading/web/node_modules/next/dist/compiled/next-server/app-route-turbo.runtime.dev.js:5:45045)\n' +
+    '    at async responseGenerator (/Users/rayepeng/Documents/code/ieg_reading/web/.next/dev/server/chunks/31f74_next_fa6c9ee2._.js:15485:38)\n' +
+    '    at async AppRouteRouteModule.handleResponse (/Users/rayepeng/Documents/code/ieg_reading/web/node_modules/next/dist/compiled/next-server/app-route-turbo.runtime.dev.js:1:187851)\n' +
+    '    at async handleResponse (/Users/rayepeng/Documents/code/ieg_reading/web/.next/dev/server/chunks/31f74_next_fa6c9ee2._.js:15547:32)\n' +
+    '    at async handler (/Users/rayepeng/Documents/code/ieg_reading/web/.next/dev/server/chunks/31f74_next_fa6c9ee2._.js:15600:13)\n' +
+    '    at async DevServer.renderToResponseWithComponentsImpl (/Users/rayepeng/Documents/code/ieg_reading/web/node_modules/next/dist/server/base-server.js:1413:9)\n' +
+    '    at async DevServer.renderPageComponent (/Users/rayepeng/Documents/code/ieg_reading/web/node_modules/next/dist/server/base-server.js:1465:24)\n' +
+    '    at async DevServer.renderToResponseImpl (/Users/rayepeng/Documents/code/ieg_reading/web/node_modules/next/dist/server/base-server.js:1515:32)\n' +
+    '    at async DevServer.pipeImpl (/Users/rayepeng/Documents/code/ieg_reading/web/node_modules/next/dist/server/base-server.js:1021:25)\n' +
+    '    at async NextNodeServer.handleCatchallRenderRequest (/Users/rayepeng/Documents/code/ieg_reading/web/node_modules/next/dist/server/next-server.js:394:17)\n' +
+    '    at async DevServer.handleRequestImpl (/Users/rayepeng/Documents/code/ieg_reading/web/node_modules/next/dist/server/base-server.js:912:17)\n' +
+    '    at async /Users/rayepeng/Documents/code/ieg_reading/web/node_modules/next/dist/server/dev/next-dev-server.js:382:20\n' +
+    '    at async Span.traceAsyncFn (/Users/rayepeng/Documents/code/ieg_reading/web/node_modules/next/dist/trace/trace.js:157:20)\n' +
+    '    at async DevServer.handleRequest (/Users/rayepeng/Documents/code/ieg_reading/web/node_modules/next/dist/server/dev/next-dev-server.js:378:24)\n' +
+    '    at async invokeRender (/Users/rayepeng/Documents/code/ieg_reading/web/node_modules/next/dist/server/lib/router-server.js:240:21)\n' +
+    '    at async handleRequest (/Users/rayepeng/Documents/code/ieg_reading/web/node_modules/next/dist/server/lib/router-server.js:436:24)\n' +
+    '    at async requestHandlerImpl (/Users/rayepeng/Documents/code/ieg_reading/web/node_modules/next/dist/server/lib/router-server.js:484:13)\n' +
+    '    at async Server.requestListener (/Users/rayepeng/Documents/code/ieg_reading/web/node_modules/next/dist/server/lib/start-server.js:226:13)',
+  name: 'JWEDecr
+```
+
+
+2. 登录admin后台报错
+
+```
+data.map is not a function. (In 'data.map((item)=>/*#__PURE__*/ (0, {imported module ./iegreading/web/nodemodules/next/dist/compiled/react/jsx-dev-runtime.js}["jsxDEV"])("tr", {
+                                                children: [
+                                                    /*#__PURE__*/ (0, {imported module ./iegreading/web/nodemodules/next/dist/compiled/react/jsx-dev-runtime.js}["jsxDEV"])("td", {
+                                                        className: "whitespace-nowrap px-6 py-4",
+                                                        children: item.id
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/ieg_reading/web/app/admin/page.tsx",
+                                                        lineNumber: 163,
+                                                        columnNumber: 49
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, {imported module ./iegreading/web/nodemodules/next/dist/compiled/react/jsx-dev-runtime.js}["jsxDEV"])("td", {
+                                                        className: "whitespace-nowrap px-6 py-4",
+                                                        children: item.title || item.name
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/ieg_reading/web/app/admin/page.tsx",
+                                                        lineNumber: 164,
+                                                        columnNumber: 49
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, {imported module ./iegreading/web/nodemodules/next/dist/compiled/react/jsx-dev-runtime.js}["jsxDEV"])("td", {
+                                                        className: "whitespace-nowrap px-6 py-4",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, {imported module ./iegreading/web/nodemodules/next/dist/compiled/react/jsx-dev-runtime.js}["jsxDEV"])("button", {
+                                                                onClick: ()=>setEditItem(item),
+                                                                className: "mr-2 text-blue-600 hover:text-blue-900",
+                                                                children: "Edit"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/ieg_reading/web/app/admin/page.tsx",
+                                                                lineNumber: 166,
+                                                                columnNumber: 53
+                                                            }, this),
+                                                            /*#__PURE__*/ (0, {imported module ./iegreading/web/nodemodules/next/dist/compiled/react/jsx-dev-runtime.js}["jsxDEV"])("button", {
+                                                                onClick: ()=>handleDelete(item.id),
+                                                                className: "text-red-600 hover:text-red-900",
+                                                                children: "Delete"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/ieg_reading/web/app/admin/page.tsx",
+                                                                lineNumber: 172,
+                                                                columnNumber: 53
+                                                            }, this)
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/ieg_reading/web/app/admin/page.tsx",
+                                                        lineNumber: 165,
+                                                        columnNumber: 49
+                                                    }, this)
+                                                ]
+                                            }, item.id, true, {
+                                                fileName: "[project]/ieg_reading/web/app/admin/page.tsx",
+                                                lineNumber: 162,
+                                                columnNumber: 45
+                                            }, this))', 'data.map' is undefined)
+```
+

@@ -28,10 +28,26 @@ export default function AdminPage() {
         setLoading(true);
         try {
             const res = await fetch(`/api/admin/${activeTab}`);
+
+            if (!res.ok) {
+                if (res.status === 401) {
+                    router.push('/login');
+                    return;
+                }
+                throw new Error(`Failed to fetch data: ${res.statusText}`);
+            }
+
             const json = await res.json();
-            setData(json);
+
+            if (Array.isArray(json)) {
+                setData(json);
+            } else {
+                console.error('Received invalid data format:', json);
+                setData([]);
+            }
         } catch (err) {
-            console.error(err);
+            console.error('Error fetching data:', err);
+            setData([]);
         } finally {
             setLoading(false);
         }
