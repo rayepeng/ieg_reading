@@ -1,7 +1,8 @@
-import Image from "next/image";
 import { PrismaClient } from '@prisma/client';
 import ScrollLayout from '@/components/ScrollLayout';
 import CouncilList from '@/components/CouncilList';
+import HeroSection from '@/components/HeroSection';
+import ThemeToggle from '@/components/ThemeToggle';
 
 const prisma = new PrismaClient();
 
@@ -21,7 +22,9 @@ export default async function Home() {
   });
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-white dark:bg-black transition-colors duration-300">
+      <ThemeToggle />
+      <HeroSection />
       <CouncilList members={councilMembers} />
       <ScrollLayout sessions={sessions} />
     </main>

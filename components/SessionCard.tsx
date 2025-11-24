@@ -26,21 +26,21 @@ export default function SessionCard({ session }: SessionCardProps) {
             </div>
             <div className="w-full lg:w-1/2 max-w-xl space-y-6">
                 <div className="space-y-2">
-                    <p className="text-sm uppercase tracking-widest text-gray-500">
+                    <p className="text-sm uppercase tracking-widest text-gray-500 dark:text-gray-400">
                         {new Date(session.date).toLocaleDateString('zh-CN', {
                             year: 'numeric',
                             month: 'long',
                             day: 'numeric',
                         })}
                     </p>
-                    <h2 className="text-4xl lg:text-6xl font-serif font-bold text-gray-900">
+                    <h2 className="text-4xl lg:text-6xl font-serif font-bold text-gray-900 dark:text-white">
                         {session.title}
                     </h2>
-                    <p className="text-lg text-gray-600 font-medium">
+                    <p className="text-lg text-gray-600 dark:text-gray-300 font-medium">
                         分享人：{session.speaker}
                     </p>
                 </div>
-                <p className="text-lg text-gray-700 leading-relaxed">
+                <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
                     {session.description}
                 </p>
             </div>

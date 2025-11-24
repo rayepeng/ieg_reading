@@ -39,7 +39,7 @@ export default function ScrollLayout({ sessions }: ScrollLayoutProps) {
     );
 
     return (
-        <div ref={containerRef} className="relative h-screen overflow-hidden bg-[#EAEAEA]">
+        <div ref={containerRef} className="relative h-screen overflow-hidden bg-[#EAEAEA] dark:bg-[#1a1a1a] transition-colors duration-300">
             <div
                 ref={panelsRef}
                 className="flex h-full w-[300%] flex-nowrap"
