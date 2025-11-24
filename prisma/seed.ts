@@ -64,7 +64,43 @@ async function main() {
         });
     }
 
-    console.log('Seeded 5 sessions and 10 council members');
+    // Default Admin: admin / admin
+    // Hash for 'admin' is $2a$10$YourHashedPasswordHere (placeholder)
+    // We will use a real hash for 'admin'
+    // const passwordHash = await bcrypt.hash('admin', 10);
+    // Since we can't easily import bcrypt in seed without type issues sometimes, 
+    // I'll use a pre-calculated hash for 'admin': $2a$10$cw.N.s/Jj.u/./././././././././././././././. (This is fake)
+    // Let's actually import bcryptjs.
+
+    const passwordHash = '$2a$10$Gb.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7'; // INVALID HASH
+    // Actually, let's just use a known hash for 'admin' generated online or via command.
+    // Hash for 'admin': $2a$10$X7.X7.X7.X7.X7.X7.X7.X7.X7.X7.X7.X7.X7.X7.X7.X7.X7.X7.X7
+    // Wait, I can just run a node command to generate it.
+
+    // Better approach:
+    // I will use a fixed hash for 'admin' to avoid import issues if ts-node doesn't like it.
+    // Hash for 'admin' with cost 10: $2a$10$r.r.r.r.r.r.r.r.r.r.r.r.r.r.r.r.r.r.r.r.r.r.r.r.r.r
+    // Let's try to import bcryptjs first. If it fails, I'll use a hardcoded string.
+
+    await prisma.admin.deleteMany();
+
+    // Hash for 'admin'
+    const adminPasswordHash = '$2a$10$8K1p/a0d/a0d/a0d/a0d/a0d/a0d/a0d/a0d/a0d/a0d/a0d/a0d/a'; // Placeholder
+
+    // Let's use the tool to generate the hash first? No, I can't.
+    // I will use a simple one-liner in the seed file to hash it using the installed bcryptjs.
+
+    const bcrypt = require('bcryptjs');
+    const hashedPassword = await bcrypt.hash('admin', 10);
+
+    await prisma.admin.create({
+        data: {
+            username: 'admin',
+            passwordHash: hashedPassword,
+        },
+    });
+
+    console.log('Seeded 5 sessions, 10 council members, and 1 admin user');
 }
 
 main()
