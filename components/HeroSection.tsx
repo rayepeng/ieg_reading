@@ -1,28 +1,36 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import gsap from 'gsap';
 import { TextPlugin } from 'gsap/TextPlugin';
+import { useGSAP } from '@gsap/react';
 import { ChevronDown } from 'lucide-react';
 
 gsap.registerPlugin(TextPlugin);
 
 export default function HeroSection() {
+    const containerRef = useRef<HTMLElement>(null);
     const sloganRef = useRef<HTMLParagraphElement>(null);
 
-    useEffect(() => {
-        if (sloganRef.current) {
-            gsap.to(sloganRef.current, {
-                duration: 4,
-                text: "或许你不喜欢书，只是因为还不认识我们。",
-                ease: "none",
-                delay: 1,
-            });
-        }
-    }, []);
+    useGSAP(
+        () => {
+            if (sloganRef.current) {
+                gsap.to(sloganRef.current, {
+                    duration: 4,
+                    text: {
+                        value: "或许你不喜欢书，只是因为还不认识我们。",
+                        delimiter: "",
+                    },
+                    ease: "none",
+                    delay: 1,
+                });
+            }
+        },
+        { scope: containerRef }
+    );
 
     return (
-        <section className="relative h-screen flex flex-col items-center justify-center bg-white dark:bg-black text-black dark:text-white transition-colors duration-300">
+        <section ref={containerRef} className="relative h-screen flex flex-col items-center justify-center bg-white dark:bg-black text-black dark:text-white transition-colors duration-300">
             <div className="text-center space-y-8 z-10 px-4">
                 <h1 className="text-6xl md:text-8xl font-serif font-bold tracking-tight">
                     IEG 读书会
